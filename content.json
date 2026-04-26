@@ -1,0 +1,99 @@
+{
+  "site": {
+    "title": "Interactive Guide",
+    "subtitle": "Answer a few questions and we'll guide you through.",
+    "header": "",
+    "footer": "Built with care.",
+    "theme": {
+      "primary": "#6366f1",
+      "accent": "#ec4899",
+      "background": "#0b0f1a",
+      "surface": "#11172a",
+      "text": "#e6e9f2"
+    },
+    "welcomePopup": {
+      "enabled": false,
+      "title": "Welcome",
+      "body": "This is a popup that shows on first load. Toggle it off in the admin panel."
+    },
+    "showRestart": true,
+    "showBack": true,
+    "showProgress": true
+  },
+  "startNodeId": "start",
+  "nodes": {
+    "start": {
+      "id": "start",
+      "title": "Let's get started",
+      "body": "Welcome to the guide. This is the **first step**. You can use _markdown_ here, including:\n\n- Lists\n- [Links](https://example.com)\n- `inline code`\n- Images, videos, and code blocks\n\nWhat best describes you?",
+      "warning": "",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "I'm brand new to this",
+          "nextNodeId": "newbie",
+          "confirmPopup": null
+        },
+        {
+          "id": "opt-2",
+          "label": "I have some experience",
+          "nextNodeId": "intermediate",
+          "confirmPopup": null
+        },
+        {
+          "id": "opt-3",
+          "label": "I just want the answer",
+          "nextNodeId": "advanced",
+          "confirmPopup": {
+            "title": "Skip ahead?",
+            "body": "You'll skip the explanation and jump straight to the result."
+          }
+        }
+      ]
+    },
+    "newbie": {
+      "id": "newbie",
+      "title": "Welcome, beginner",
+      "body": "Great — we'll take it slow. Here's a short overview before we go further.\n\n```js\n// You can show code with syntax highlighting\nfunction hello() {\n  console.log('Hi!');\n}\n```\n\nReady to continue?",
+      "warning": "",
+      "options": [
+        { "id": "opt-1", "label": "Yes, continue", "nextNodeId": "result-a" },
+        { "id": "opt-2", "label": "Take me back", "nextNodeId": "start" }
+      ]
+    },
+    "intermediate": {
+      "id": "intermediate",
+      "title": "Nice — let's narrow it down",
+      "body": "What are you trying to do?",
+      "warning": "",
+      "options": [
+        { "id": "opt-1", "label": "Option one", "nextNodeId": "result-a" },
+        { "id": "opt-2", "label": "Option two", "nextNodeId": "result-b" }
+      ]
+    },
+    "advanced": {
+      "id": "advanced",
+      "title": "Quick answer",
+      "body": "Here is the recommended path. Customize this content from the admin panel.",
+      "warning": "Make sure you actually need this — if unsure, restart and answer the questions.",
+      "options": [],
+      "isEnd": true
+    },
+    "result-a": {
+      "id": "result-a",
+      "title": "Recommendation A",
+      "body": "Based on your answers, **here's what to do next**.\n\nYou can embed videos by pasting a YouTube/Vimeo link on its own line:\n\nhttps://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "warning": "",
+      "options": [],
+      "isEnd": true
+    },
+    "result-b": {
+      "id": "result-b",
+      "title": "Recommendation B",
+      "body": "Here's a different path tailored to your answers. Edit this in the admin panel.",
+      "warning": "Heads up: this option has some caveats — read carefully.",
+      "options": [],
+      "isEnd": true
+    }
+  }
+}

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guide · Admin</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%236366f1'/%3E%3C/svg%3E" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+  <style>
+    :root { --primary:#6366f1; --accent:#ec4899; --bg:#0b0f1a; --surface:#11172a; --text:#e6e9f2; }
+    html, body { background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, "Inter", sans-serif; }
+    body {
+      background-image:
+        radial-gradient(1200px 600px at 0% -10%, color-mix(in oklab, var(--primary) 22%, transparent), transparent 60%),
+        radial-gradient(900px 500px at 110% 10%, color-mix(in oklab, var(--accent) 18%, transparent), transparent 60%),
+        linear-gradient(180deg, color-mix(in oklab, var(--bg) 90%, black), var(--bg));
+      min-height: 100vh;
+    }
+    .glass {
+      background: color-mix(in oklab, var(--surface) 70%, transparent);
+      backdrop-filter: blur(14px) saturate(120%);
+      border: 1px solid color-mix(in oklab, white 8%, transparent);
+    }
+    input, textarea, select {
+      background: color-mix(in oklab, var(--surface) 80%, black 5%);
+      color: var(--text);
+      border: 1px solid color-mix(in oklab, white 10%, transparent);
+      border-radius: 10px;
+      padding: 9px 12px;
+      width: 100%;
+      font-size: 14px;
+      font-family: inherit;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: color-mix(in oklab, var(--primary) 80%, transparent);
+      box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 30%, transparent);
+    }
+    textarea { resize: vertical; }
+    label { font-size: 12px; opacity: .8; display: block; margin-bottom: 4px; }
+    .btn { padding: 8px 14px; border-radius: 10px; font-size: 14px; font-weight: 500; transition: transform .15s ease, opacity .15s ease, background .15s ease; cursor: pointer; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; box-shadow: 0 8px 30px -10px color-mix(in oklab, var(--primary) 70%, transparent); }
+    .btn-ghost { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: var(--text); }
+    .btn-danger { background: rgba(220,38,38,.15); border: 1px solid rgba(220,38,38,.4); color:#fecaca; }
+    .chip { font-size: 11px; padding: 2px 8px; border-radius: 999px; background: rgba(255,255,255,.08); }
+    .node-card { transition: border-color .15s ease, transform .15s ease; }
+    .node-card:hover { border-color: color-mix(in oklab, var(--primary) 60%, transparent); }
+    .toast { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); z-index: 100; padding: 10px 16px; border-radius: 10px; font-size: 14px; }
+    .toast.ok { background: rgba(34,197,94,.2); border: 1px solid rgba(34,197,94,.5); color: #bbf7d0; }
+    .toast.err { background: rgba(239,68,68,.2); border: 1px solid rgba(239,68,68,.5); color: #fecaca; }
+    .modal-backdrop { background: rgba(5, 8, 16, 0.7); backdrop-filter: blur(8px); }
+    details > summary { cursor: pointer; list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    .drag-handle { cursor: grab; }
+    .drag-handle:active { cursor: grabbing; }
+    .dragging { opacity: 0.4; }
+    .drag-over { border-top: 2px solid var(--primary); }
+    code { background: rgba(255,255,255,0.08); padding: 1px 6px; border-radius: 5px; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <!-- Login screen -->
+  <section id="login" class="min-h-screen flex items-center justify-center p-5">
+    <div class="glass rounded-2xl p-8 max-w-lg w-full">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-10 h-10 rounded-xl" style="background: linear-gradient(135deg, var(--primary), var(--accent));"></div>
+        <div>
+          <h1 class="text-xl font-semibold">Admin</h1>
+          <p class="text-xs opacity-70">Sign in with a GitHub Personal Access Token</p>
+        </div>
+      </div>
+
+      <details class="mb-5 text-sm">
+        <summary class="opacity-80 hover:opacity-100">How to set this up (one time, ~2 min)</summary>
+        <ol class="list-decimal pl-5 mt-3 space-y-2 opacity-90">
+          <li>Open <a class="underline" href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → fine-grained tokens</a>.</li>
+          <li>Set <strong>Resource owner</strong> = your account, <strong>Repository access</strong> = "Only select repositories" → pick this guide's repo.</li>
+          <li>Under <strong>Repository permissions</strong>, set <em>Contents</em> = <strong>Read and write</strong>. Leave everything else.</li>
+          <li>Set an expiration (90 days recommended). Generate, copy the token (starts with <code>github_pat_</code>).</li>
+          <li>Paste it below along with your <code>owner/repo</code>.</li>
+        </ol>
+        <p class="mt-3 text-xs opacity-70">Why this is secure: only you can generate this token, it's scoped to one repo and one permission, you can revoke it instantly from GitHub, and nothing is stored on a server — it lives in your browser only.</p>
+      </details>
+
+      <div class="space-y-3">
+        <div>
+          <label>Repository (owner/repo)</label>
+          <input id="repo-input" placeholder="yourname/your-guide-repo" autocomplete="off" />
+        </div>
+        <div>
+          <label>Branch</label>
+          <input id="branch-input" placeholder="main" value="main" autocomplete="off" />
+        </div>
+        <div>
+          <label>GitHub Personal Access Token</label>
+          <input id="token-input" type="password" placeholder="github_pat_..." autocomplete="off" />
+        </div>
+        <label class="flex items-center gap-2 text-sm opacity-90 cursor-pointer">
+          <input id="remember" type="checkbox" class="w-4 h-4 accent-indigo-500" style="width:auto;" />
+          Remember on this device (uses localStorage instead of session memory)
+        </label>
+        <button id="login-btn" class="btn btn-primary w-full">Sign in</button>
+        <div id="login-error" class="text-sm text-red-300 hidden"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editor -->
+  <section id="editor" class="hidden">
+    <header class="px-5 py-4 flex items-center justify-between gap-4 border-b border-white/5 sticky top-0 z-30 glass">
+      <div class="flex items-center gap-3 min-w-0">
+        <div class="w-8 h-8 rounded-lg" style="background: linear-gradient(135deg, var(--primary), var(--accent));"></div>
+        <div class="min-w-0">
+          <div class="font-semibold text-sm">Guide · Admin</div>
+          <div id="repo-label" class="text-xs opacity-60 truncate"></div>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <span id="dirty-indicator" class="hidden chip" style="background: rgba(245,158,11,.2); border:1px solid rgba(245,158,11,.4); color:#fde68a;">Unsaved</span>
+        <a href="index.html" target="_blank" class="btn btn-ghost text-sm">Preview ↗</a>
+        <button id="save-btn" class="btn btn-primary text-sm">Save & Publish</button>
+        <button id="logout-btn" class="btn btn-ghost text-sm">Sign out</button>
+      </div>
+    </header>
+
+    <div class="max-w-6xl mx-auto p-5 space-y-6">
+      <!-- Site settings -->
+      <section class="glass rounded-2xl p-5">
+        <h2 class="text-lg font-semibold mb-4">Site settings</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div><label>Title</label><input data-bind="site.title" /></div>
+          <div><label>Subtitle</label><input data-bind="site.subtitle" /></div>
+          <div class="md:col-span-2"><label>Header (markdown, optional banner above the card)</label><textarea data-bind="site.header" rows="2"></textarea></div>
+          <div class="md:col-span-2"><label>Footer (markdown)</label><textarea data-bind="site.footer" rows="2"></textarea></div>
+        </div>
+
+        <details class="mt-5">
+          <summary class="text-sm font-medium opacity-90 mb-3">Theme colors</summary>
+          <div class="grid md:grid-cols-5 gap-3 mt-3">
+            <div><label>Primary</label><input data-bind="site.theme.primary" type="color" /></div>
+            <div><label>Accent</label><input data-bind="site.theme.accent" type="color" /></div>
+            <div><label>Background</label><input data-bind="site.theme.background" type="color" /></div>
+            <div><label>Surface</label><input data-bind="site.theme.surface" type="color" /></div>
+            <div><label>Text</label><input data-bind="site.theme.text" type="color" /></div>
+          </div>
+        </details>
+
+        <details class="mt-5">
+          <summary class="text-sm font-medium opacity-90 mb-3">Welcome popup (shown once per session on first load)</summary>
+          <div class="grid gap-3 mt-3">
+            <label class="flex items-center gap-2 text-sm">
+              <input type="checkbox" data-bind="site.welcomePopup.enabled" class="w-4 h-4 accent-indigo-500" style="width:auto;" /> Enable welcome popup
+            </label>
+            <div><label>Title</label><input data-bind="site.welcomePopup.title" /></div>
+            <div><label>Body (markdown)</label><textarea data-bind="site.welcomePopup.body" rows="3"></textarea></div>
+          </div>
+        </details>
+
+        <details class="mt-5">
+          <summary class="text-sm font-medium opacity-90 mb-3">Behavior</summary>
+          <div class="flex flex-wrap gap-4 mt-3 text-sm">
+            <label class="flex items-center gap-2"><input type="checkbox" data-bind="site.showRestart" class="w-4 h-4 accent-indigo-500" style="width:auto;" /> Show restart button</label>
+            <label class="flex items-center gap-2"><input type="checkbox" data-bind="site.showBack" class="w-4 h-4 accent-indigo-500" style="width:auto;" /> Show back button</label>
+            <label class="flex items-center gap-2"><input type="checkbox" data-bind="site.showProgress" class="w-4 h-4 accent-indigo-500" style="width:auto;" /> Show progress bar</label>
+          </div>
+        </details>
+      </section>
+
+      <!-- Nodes -->
+      <section class="glass rounded-2xl p-5">
+        <div class="flex items-center justify-between mb-4 flex-wrap gap-3">
+          <h2 class="text-lg font-semibold">Steps (nodes)</h2>
+          <div class="flex items-center gap-2">
+            <label class="text-xs opacity-70">Start step:</label>
+            <select id="start-node-select" class="text-sm" style="width:auto;"></select>
+            <button id="add-node-btn" class="btn btn-primary text-sm">+ New step</button>
+          </div>
+        </div>
+        <div id="nodes-list" class="space-y-3"></div>
+      </section>
+
+      <!-- Image upload helper -->
+      <section class="glass rounded-2xl p-5">
+        <h2 class="text-lg font-semibold mb-2">Upload image</h2>
+        <p class="text-xs opacity-70 mb-3">Uploads commit to <code>assets/uploads/</code> in your repo and give you a markdown snippet to paste into any body or popup.</p>
+        <div class="flex flex-wrap items-center gap-3">
+          <input id="image-input" type="file" accept="image/*" style="width:auto;" />
+          <button id="upload-btn" class="btn btn-ghost text-sm">Upload</button>
+          <span id="upload-status" class="text-xs opacity-70"></span>
+        </div>
+        <textarea id="upload-result" rows="2" class="mt-3 hidden" placeholder="Markdown snippet appears here after upload" readonly></textarea>
+      </section>
+    </div>
+  </section>
+
+  <!-- Confirm modal -->
+  <div id="modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-5 modal-backdrop">
+    <div class="glass rounded-2xl p-6 max-w-md w-full">
+      <h3 id="modal-title" class="text-lg font-semibold mb-2"></h3>
+      <p id="modal-body" class="text-sm opacity-90"></p>
+      <div class="mt-5 flex justify-end gap-2">
+        <button id="modal-cancel" class="btn btn-ghost text-sm">Cancel</button>
+        <button id="modal-confirm" class="btn btn-danger text-sm">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+  <script src="assets/admin.js?v=1"></script>
+</body>
+</html>

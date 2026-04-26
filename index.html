@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guide</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%236366f1'/%3E%3C/svg%3E" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11/styles/github-dark.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/common.min.js"></script>
+  <style>
+    :root {
+      --primary: #6366f1;
+      --accent: #ec4899;
+      --bg: #0b0f1a;
+      --surface: #11172a;
+      --text: #e6e9f2;
+    }
+    html, body { background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, "Inter", sans-serif; }
+    body {
+      background-image:
+        radial-gradient(1200px 600px at 10% -10%, color-mix(in oklab, var(--primary) 25%, transparent), transparent 60%),
+        radial-gradient(900px 500px at 110% 10%, color-mix(in oklab, var(--accent) 22%, transparent), transparent 60%),
+        linear-gradient(180deg, color-mix(in oklab, var(--bg) 90%, black), var(--bg));
+      min-height: 100vh;
+    }
+    .glass {
+      background: color-mix(in oklab, var(--surface) 70%, transparent);
+      backdrop-filter: blur(14px) saturate(120%);
+      -webkit-backdrop-filter: blur(14px) saturate(120%);
+      border: 1px solid color-mix(in oklab, white 8%, transparent);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+      box-shadow: 0 8px 30px -10px color-mix(in oklab, var(--primary) 70%, transparent);
+    }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 40px -10px color-mix(in oklab, var(--accent) 70%, transparent); }
+    .btn-primary:active { transform: translateY(0); }
+    .option-btn {
+      background: color-mix(in oklab, var(--surface) 90%, white 2%);
+      border: 1px solid color-mix(in oklab, white 8%, transparent);
+      color: var(--text);
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .option-btn:hover {
+      border-color: color-mix(in oklab, var(--primary) 80%, transparent);
+      transform: translateY(-1px);
+      background: color-mix(in oklab, var(--surface) 70%, var(--primary) 10%);
+    }
+    .prose-custom h1, .prose-custom h2, .prose-custom h3 { font-weight: 700; margin: .8em 0 .4em; }
+    .prose-custom h1 { font-size: 1.5rem; }
+    .prose-custom h2 { font-size: 1.25rem; }
+    .prose-custom h3 { font-size: 1.1rem; }
+    .prose-custom p { margin: .6em 0; line-height: 1.65; }
+    .prose-custom ul, .prose-custom ol { margin: .6em 0; padding-left: 1.4em; }
+    .prose-custom li { margin: .25em 0; }
+    .prose-custom a { color: color-mix(in oklab, var(--primary) 80%, white 20%); text-decoration: underline; text-underline-offset: 3px; }
+    .prose-custom code { background: rgba(255,255,255,.08); padding: .15em .4em; border-radius: 6px; font-size: .9em; }
+    .prose-custom pre { background: #0b0f1a; border: 1px solid rgba(255,255,255,.08); border-radius: 12px; padding: 1em; overflow-x: auto; }
+    .prose-custom pre code { background: none; padding: 0; }
+    .prose-custom img { border-radius: 12px; max-width: 100%; height: auto; margin: .6em 0; }
+    .prose-custom blockquote { border-left: 3px solid var(--primary); padding-left: 1em; color: color-mix(in oklab, var(--text) 80%, transparent); margin: .6em 0; }
+    .prose-custom .video-embed { aspect-ratio: 16/9; width: 100%; border-radius: 12px; overflow: hidden; margin: .6em 0; border: 1px solid rgba(255,255,255,.08); }
+    .prose-custom .video-embed iframe { width: 100%; height: 100%; border: 0; }
+    .warning {
+      background: color-mix(in oklab, #f59e0b 15%, transparent);
+      border: 1px solid color-mix(in oklab, #f59e0b 40%, transparent);
+      color: #fde68a;
+    }
+    .fade-enter { opacity: 0; transform: translateY(8px); }
+    .fade-active { opacity: 1; transform: translateY(0); transition: opacity .35s ease, transform .35s ease; }
+    .modal-backdrop { background: rgba(5, 8, 16, 0.7); backdrop-filter: blur(8px); }
+    @keyframes pulseRing { 0%{ box-shadow: 0 0 0 0 color-mix(in oklab, var(--primary) 50%, transparent);} 100%{ box-shadow: 0 0 0 14px transparent;} }
+    .pulse-ring { animation: pulseRing 1.4s ease-out infinite; }
+  </style>
+</head>
+<body class="min-h-screen">
+  <div id="app" class="min-h-screen flex flex-col">
+    <header id="site-header" class="px-5 py-4 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3 min-w-0">
+        <div class="w-9 h-9 rounded-xl shrink-0" style="background: linear-gradient(135deg, var(--primary), var(--accent));"></div>
+        <div class="min-w-0">
+          <div id="site-title" class="font-semibold truncate">Guide</div>
+          <div id="site-subtitle" class="text-xs opacity-70 truncate"></div>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="restart-btn" class="hidden text-sm px-3 py-1.5 rounded-lg glass hover:opacity-90">Restart</button>
+      </div>
+    </header>
+
+    <div id="header-banner" class="hidden px-5"></div>
+
+    <main class="flex-1 flex items-start justify-center px-5 py-6">
+      <div class="w-full max-w-2xl">
+        <div id="progress" class="hidden mb-4">
+          <div class="flex items-center gap-2 text-xs opacity-70 mb-2">
+            <span id="progress-label">Step 1</span>
+          </div>
+          <div class="h-1.5 rounded-full bg-white/5 overflow-hidden">
+            <div id="progress-bar" class="h-full" style="width: 0%; background: linear-gradient(90deg, var(--primary), var(--accent)); transition: width .4s ease;"></div>
+          </div>
+        </div>
+
+        <section id="card" class="glass rounded-3xl p-7 md:p-9 shadow-2xl">
+          <div id="card-content" class="fade-enter"></div>
+        </section>
+
+        <div class="mt-4 flex items-center justify-between text-sm">
+          <button id="back-btn" class="hidden opacity-70 hover:opacity-100 px-3 py-1.5 rounded-lg">← Back</button>
+          <div></div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="site-footer" class="px-5 py-6 text-center text-xs opacity-60"></footer>
+  </div>
+
+  <!-- Generic modal -->
+  <div id="modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-5 modal-backdrop">
+    <div class="glass rounded-2xl p-6 max-w-md w-full">
+      <h3 id="modal-title" class="text-lg font-semibold mb-2"></h3>
+      <div id="modal-body" class="text-sm opacity-90 prose-custom"></div>
+      <div class="mt-5 flex justify-end gap-2">
+        <button id="modal-cancel" class="px-4 py-2 rounded-lg glass hover:opacity-90 text-sm">Cancel</button>
+        <button id="modal-confirm" class="btn-primary px-4 py-2 rounded-lg text-sm font-medium">Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/app.js?v=1"></script>
+</body>
+</html>
