@@ -1,9 +1,9 @@
 {
   "site": {
-    "title": "Interactive Guide",
-    "subtitle": "Answer a few questions and we'll guide you through.",
+    "title": "The Chromebook Ultraguide",
+    "subtitle": "The most updated guide for chromebook unenrollment on the web",
     "header": "",
-    "footer": "Built with care.",
+    "footer": "Last updated: April 26, 2026",
     "theme": {
       "primary": "#6366f1",
       "accent": "#ec4899",
@@ -12,9 +12,9 @@
       "text": "#e6e9f2"
     },
     "welcomePopup": {
-      "enabled": false,
-      "title": "Welcome",
-      "body": "This is a popup that shows on first load. Toggle it off in the admin panel."
+      "enabled": true,
+      "title": "WARNING",
+      "body": "This guide is not responsible for any trouble you may get in to by using these exploits. These are for educational purposes only and should not be used to cheat in school."
     },
     "showRestart": true,
     "showBack": true,
@@ -24,75 +24,77 @@
   "nodes": {
     "start": {
       "id": "start",
-      "title": "Let's get started",
-      "body": "Welcome to the guide. This is the **first step**. You can use _markdown_ here, including:\n\n- Lists\n- [Links](https://example.com)\n- `inline code`\n- Images, videos, and code blocks\n\nWhat best describes you?",
+      "title": "First steps",
+      "body": "This guide is to help you bypass school spyware and blocking tools that are unethically forced on you in school environments. It covers exploits with varying levels of risk associated.\n\n---\n\n# Question number 1:\nWhat OS are you using?",
       "warning": "",
       "options": [
         {
           "id": "opt-1",
-          "label": "I'm brand new to this",
-          "nextNodeId": "newbie",
+          "label": "Chrome OS",
+          "nextNodeId": "Chrome OS 1",
           "confirmPopup": null
         },
         {
           "id": "opt-2",
-          "label": "I have some experience",
-          "nextNodeId": "intermediate",
+          "label": "Windows",
+          "nextNodeId": "Windows 1",
           "confirmPopup": null
         },
         {
-          "id": "opt-3",
-          "label": "I just want the answer",
-          "nextNodeId": "advanced",
+          "id": "opt-4f4466p",
+          "label": "Other",
+          "nextNodeId": "No Supported Exploits",
           "confirmPopup": {
-            "title": "Skip ahead?",
-            "body": "You'll skip the explanation and jump straight to the result."
+            "title": "Warning",
+            "confirmLabel": "That's OK",
+            "body": "There are limited exploits for an os that is not Windows or Chrome OS"
           }
         }
       ]
     },
-    "newbie": {
-      "id": "newbie",
-      "title": "Welcome, beginner",
-      "body": "Great — we'll take it slow. Here's a short overview before we go further.\n\n```js\n// You can show code with syntax highlighting\nfunction hello() {\n  console.log('Hi!');\n}\n```\n\nReady to continue?",
+    "Chrome OS 1": {
+      "id": "Chrome OS 1",
+      "title": "Chrome OS 1",
+      "body": "Chrome OS Guide will go here in the future",
       "warning": "",
       "options": [
-        { "id": "opt-1", "label": "Yes, continue", "nextNodeId": "result-a" },
-        { "id": "opt-2", "label": "Take me back", "nextNodeId": "start" }
-      ]
+        {
+          "id": "opt-rrtl89b",
+          "label": "Continue",
+          "nextNodeId": "start",
+          "confirmPopup": null
+        }
+      ],
+      "isEnd": true
     },
-    "intermediate": {
-      "id": "intermediate",
-      "title": "Nice — let's narrow it down",
-      "body": "What are you trying to do?",
+    "Windows 1": {
+      "id": "Windows 1",
+      "title": "Windows 1",
+      "body": "Windows Guide will go here in the future",
       "warning": "",
       "options": [
-        { "id": "opt-1", "label": "Option one", "nextNodeId": "result-a" },
-        { "id": "opt-2", "label": "Option two", "nextNodeId": "result-b" }
-      ]
-    },
-    "advanced": {
-      "id": "advanced",
-      "title": "Quick answer",
-      "body": "Here is the recommended path. Customize this content from the admin panel.",
-      "warning": "Make sure you actually need this — if unsure, restart and answer the questions.",
-      "options": [],
+        {
+          "id": "opt-rrtl89b",
+          "label": "Continue",
+          "nextNodeId": "start",
+          "confirmPopup": null
+        }
+      ],
       "isEnd": true
     },
-    "result-a": {
-      "id": "result-a",
-      "title": "Recommendation A",
-      "body": "Based on your answers, **here's what to do next**.\n\nYou can embed videos by pasting a YouTube/Vimeo link on its own line:\n\nhttps://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "No Supported Exploits": {
+      "id": "No Supported Exploits",
+      "title": "No Exploits",
+      "body": "Unfortunately there are no supported exploits for you at this time",
       "warning": "",
-      "options": [],
-      "isEnd": true
-    },
-    "result-b": {
-      "id": "result-b",
-      "title": "Recommendation B",
-      "body": "Here's a different path tailored to your answers. Edit this in the admin panel.",
-      "warning": "Heads up: this option has some caveats — read carefully.",
-      "options": [],
+      "options": [
+        {
+          "id": "opt-rrtl89b",
+          "label": "Restart",
+          "nextNodeId": "start",
+          "confirmPopup": null
+        }
+      ],
       "isEnd": true
     }
   }
