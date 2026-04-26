@@ -27,23 +27,31 @@ assets/         ← app.js, admin.js, uploaded images
 
    The guide loads at `/` and the admin at `/admin.html`.
 
-## 2. Edit content (admin)
+## 2. Edit content — two ways
 
-1. Visit `/admin.html` on your deployed site.
-2. **One-time token setup:**
-   - Open https://github.com/settings/personal-access-tokens/new
-   - **Resource owner:** your account
-   - **Repository access:** *Only select repositories* → pick this guide's repo
-   - **Permissions → Repository permissions:**
-     - **Contents:** *Read and write*
-     - (leave everything else)
-   - **Expiration:** 90 days is fine; you can re-issue any time
-   - Generate, copy the `github_pat_...` token
-3. In the admin login screen, enter:
-   - **Repository:** `your-username/your-repo`
-   - **Branch:** `main`
-   - **Token:** the one you just generated
-4. Edit titles, options, popups, warnings, theme colors, header/footer, welcome popup, etc. Click **Save & Publish**. GitHub Pages rebuilds in ~30 seconds.
+### A) Inline edit on the live site (recommended, WYSIWYG)
+
+1. Visit your site (just `/`, the main URL).
+2. Press **`Cmd/Ctrl + Shift + E`** *or* go to `/#edit` to open the sign-in modal.
+3. Enter your repo + PAT (see token setup below). Tick "Remember on this device" so you don't have to do it every time.
+4. The page becomes editable in place — title, body (with live markdown preview), warning, and option buttons all editable inline. A toolbar at the top has **Save**, **Steps** (jump between steps), **+ Step**, **⚙ Settings** (theme, header, footer, welcome popup), **👁 Preview** (see what visitors see), and **⋯** (image upload, duplicate, delete, sign out).
+5. Edit, click **Save** → GitHub Pages rebuilds in ~30 seconds.
+
+After signing in once, a small **✎ Edit** button appears in the corner on every visit (only visible to you on your own browser — invisible to public visitors).
+
+### B) Structured admin (alternate)
+
+Visit `/admin.html` for a list-based editor of all steps and site settings — same data, different layout. Useful for big restructures.
+
+### One-time token setup
+
+1. Open https://github.com/settings/personal-access-tokens/new
+2. **Resource owner:** your account
+3. **Repository access:** *Only select repositories* → pick this guide's repo
+4. **Permissions → Repository permissions → Contents:** *Read and write* (leave everything else)
+5. **Expiration:** 90 days is fine; you can re-issue any time
+6. Generate, copy the `github_pat_...` token
+7. Paste it into the inline editor sign-in modal (or `/admin.html`).
 
 ### Why this is secure
 

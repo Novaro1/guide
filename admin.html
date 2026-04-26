@@ -115,17 +115,23 @@
       <div class="flex items-center gap-3 min-w-0">
         <div class="w-8 h-8 rounded-lg" style="background: linear-gradient(135deg, var(--primary), var(--accent));"></div>
         <div class="min-w-0">
-          <div class="font-semibold text-sm">Guide · Admin</div>
+          <div class="font-semibold text-sm">Guide · Admin (structured)</div>
           <div id="repo-label" class="text-xs opacity-60 truncate"></div>
         </div>
       </div>
       <div class="flex items-center gap-2">
         <span id="dirty-indicator" class="hidden chip" style="background: rgba(245,158,11,.2); border:1px solid rgba(245,158,11,.4); color:#fde68a;">Unsaved</span>
-        <a href="index.html" target="_blank" class="btn btn-ghost text-sm">Preview ↗</a>
-        <button id="save-btn" class="btn btn-primary text-sm">Save & Publish</button>
+        <a href="index.html#edit" class="btn btn-primary text-sm">✎ Edit on live site</a>
+        <button id="save-btn" class="btn btn-ghost text-sm">Save</button>
         <button id="logout-btn" class="btn btn-ghost text-sm">Sign out</button>
       </div>
     </header>
+    <div class="max-w-6xl mx-auto px-5 pt-4">
+      <div class="glass rounded-xl px-4 py-3 text-sm flex items-center gap-3 flex-wrap" style="border-color: color-mix(in oklab, var(--primary) 40%, transparent);">
+        <span>✨</span>
+        <span class="opacity-90">Tip: <a href="index.html#edit" class="underline">edit on the live site</a> for a WYSIWYG experience — see your changes exactly as visitors will.</span>
+      </div>
+    </div>
 
     <div class="max-w-6xl mx-auto p-5 space-y-6">
       <!-- Site settings -->
