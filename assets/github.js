@@ -4,10 +4,19 @@
   const FILE_PATH = "content.json";
 
   function utf8ToBase64(str) {
-    return btoa(unescape(encodeURIComponent(str)));
+    const bytes = new TextEncoder().encode(str);
+    let binary = "";
+    for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+    return btoa(binary);
   }
   function base64ToUtf8(b64) {
-    return decodeURIComponent(escape(atob(b64.replace(/\n/g, ""))));
+    const binary = atob(b64.replace(/\s/g, ""));
+    const bytes = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+    let str = new TextDecoder("utf-8").decode(bytes);
+    // Strip UTF-8 BOM if present
+    if (str.charCodeAt(0) === 0xFEFF) str = str.slice(1);
+    return str;
   }
 
   const GH = {
@@ -72,7 +81,13 @@
     async fetchContent() {
       const data = await this.api(`/repos/${this.creds.owner}/${this.creds.repo}/contents/${FILE_PATH}?ref=${encodeURIComponent(this.creds.branch)}`);
       this.contentSha = data.sha;
-      return JSON.parse(base64ToUtf8(data.content));
+      const decoded = base64ToUtf8(data.content);
+      try {
+        return JSON.parse(decoded);
+      } catch (e) {
+        console.error("content.json parse failed. First 200 chars:", JSON.stringify(decoded.slice(0, 200)));
+        throw new Error(`content.json is not valid JSON (${e.message}). Check the file in your repo. First chars: ${decoded.slice(0, 60)}`);
+      }
     },
 
     async saveContent(content, message = "Update guide content") {
