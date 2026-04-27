@@ -80,16 +80,9 @@
     "Windows 1": {
       "id": "Windows 1",
       "title": "Windows 1",
-      "body": "Click a guide",
+      "body": "(Not added yet)",
       "warning": "I do not own any widows devices to test these exploits. I can only give you what I have found online.",
-      "options": [
-        {
-          "id": "opt-rrtl89b",
-          "label": "RedSun",
-          "nextNodeId": "step-bbb4bde",
-          "confirmPopup": null
-        }
-      ],
+      "options": [],
       "isEnd": true
     },
     "No Supported Exploits": {
@@ -97,14 +90,7 @@
       "title": "No Exploits",
       "body": "Unfortunately there are no supported exploits for you at this time",
       "warning": "",
-      "options": [
-        {
-          "id": "opt-rrtl89b",
-          "label": "Restart",
-          "nextNodeId": "start",
-          "confirmPopup": null
-        }
-      ],
+      "options": [],
       "isEnd": true
     },
     "step-hnp24vi": {
@@ -112,28 +98,7 @@
       "title": "Chromebook Unenrollment",
       "body": "Welcome to the chromebook unenrollment guide. \n\n---\nBelow are different exploits, utilities, and so on. They are each based on chrome os. They will open a popup when clicked that display the requirements.",
       "warning": "Unenrollment requires powerwash in almost all scenarios.",
-      "options": [
-        {
-          "id": "opt-n1vogzf",
-          "label": "Install Arch Linux chroot on ChromeOS with GUI support",
-          "nextNodeId": "step-ypkj4dv",
-          "confirmPopup": {
-            "title": "Requirements",
-            "body": "1. Cros shell unblocked\n2. ~16GB of storage\n3. 2GB RAM\n4. Stable internet connection\n5. AC adapter\n6. _CPU Support: x8664 & ARM64 - CPU must be 64-bit\n7. GPU Support: AMD, Intel, NVIDIA, ARM, Mali, Rockchip, Mediatek, Adreno, & Vivanti\n",
-            "confirmLabel": "Continue"
-          }
-        },
-        {
-          "id": "opt-oysnbtq",
-          "label": "Baddieapple",
-          "nextNodeId": "step-0aqy7jp",
-          "confirmPopup": {
-            "title": "Requirements",
-            "body": "Lower than version 143\n\nOnly works on the following boards: nissa, skyrim, guybrush, corsola, brya, rex, cherry, geralt, staryu\n\nGrants code execution in developer mode miniOS after the BadApple patch!",
-            "confirmLabel": "Continue"
-          }
-        }
-      ],
+      "options": [],
       "isEnd": true
     },
     "step-n73leey": {
@@ -150,13 +115,19 @@
         },
         {
           "id": "opt-3w1s8ve",
-          "label": "Other General Temp Bypass",
+          "label": "Blocker Specific Bypasses",
           "nextNodeId": "step-1zak6jk",
           "confirmPopup": {
             "title": "Warning",
             "body": "These bypasses are usually blocker specific and there is a chance they have been patched, as well as a chance that there is no bypass for your blocker.",
             "confirmLabel": "Continue"
           }
+        },
+        {
+          "id": "opt-bso2rov",
+          "label": "Other General Bypasses",
+          "nextNodeId": "step-bcvuuow",
+          "confirmPopup": null
         }
       ],
       "isEnd": true
@@ -189,12 +160,6 @@
           "confirmPopup": null
         },
         {
-          "id": "opt-j2puaha",
-          "label": "Lightspeed (Worse)",
-          "nextNodeId": "step-raityvr",
-          "confirmPopup": null
-        },
-        {
           "id": "opt-ez2psn8",
           "label": "Lanschool",
           "nextNodeId": "step-c62g7up",
@@ -205,19 +170,15 @@
           }
         },
         {
-          "id": "opt-0zlfui5",
-          "label": "Any Extension Based Blocker Bypass (Bad)",
-          "nextNodeId": "step-qav2nkm",
-          "confirmPopup": {
-            "title": "ONLY USE THIS AS A LAST RESORT 🙏 🙏 😭 😭",
-            "body": "This is the most skiddy exploit ever",
-            "confirmLabel": "Continue"
-          }
+          "id": "opt-2ixbk0t",
+          "label": "Lightspeed",
+          "nextNodeId": "step-3nrr2nu",
+          "confirmPopup": null
         },
         {
-          "id": "opt-2ixbk0t",
-          "label": "Lightspeed (Best)",
-          "nextNodeId": "step-3nrr2nu",
+          "id": "opt-lor0esu",
+          "label": "I don't have any of these",
+          "nextNodeId": "No Supported Exploits",
           "confirmPopup": null
         }
       ],
@@ -286,6 +247,25 @@
       "warning": "",
       "options": [],
       "isEnd": true
+    },
+    "step-bcvuuow": {
+      "id": "step-bcvuuow",
+      "title": "Other General Bypasses",
+      "body": "These Bypasses are more general purpose bypasses for different blockers",
+      "warning": "",
+      "options": [
+        {
+          "id": "opt-i8uuz86",
+          "label": "Edging Extensions (Last Resort)",
+          "nextNodeId": "step-qav2nkm",
+          "confirmPopup": {
+            "title": "ONLY USE AS LAST RESORT",
+            "body": "",
+            "confirmLabel": "Continue"
+          }
+        }
+      ],
+      "isEnd": false
     }
   }
 }
