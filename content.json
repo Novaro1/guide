@@ -75,7 +75,7 @@
           "confirmPopup": null
         }
       ],
-      "isEnd": true
+      "isEnd": false
     },
     "Windows 1": {
       "id": "Windows 1",
@@ -83,7 +83,7 @@
       "body": "(Not added yet)",
       "warning": "I do not own any widows devices to test these exploits. I can only give you what I have found online.",
       "options": [],
-      "isEnd": true
+      "isEnd": false
     },
     "No Supported Exploits": {
       "id": "No Supported Exploits",
@@ -99,7 +99,7 @@
       "body": "Welcome to the chromebook unenrollment guide. \n\n---\nBelow are different exploits, utilities, and so on. They are each based on chrome os. They will open a popup when clicked that display the requirements.",
       "warning": "Unenrollment requires powerwash in almost all scenarios.",
       "options": [],
-      "isEnd": true
+      "isEnd": false
     },
     "step-n73leey": {
       "id": "step-n73leey",
@@ -130,7 +130,7 @@
           "confirmPopup": null
         }
       ],
-      "isEnd": true
+      "isEnd": false
     },
     "step-643lca3": {
       "id": "step-643lca3",
@@ -145,7 +145,7 @@
           "confirmPopup": null
         }
       ],
-      "isEnd": true
+      "isEnd": false
     },
     "step-1zak6jk": {
       "id": "step-1zak6jk",
@@ -182,7 +182,7 @@
           "confirmPopup": null
         }
       ],
-      "isEnd": true
+      "isEnd": false
     },
     "step-yhqnke7": {
       "id": "step-yhqnke7",
